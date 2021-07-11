@@ -4,7 +4,8 @@
   "description": "Kiez Project",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node index.js"
   },
   "author": "ealbiol",
   "license": "ISC",
