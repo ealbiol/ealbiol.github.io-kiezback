@@ -45,7 +45,7 @@ app.use("/neighborhoodsProperties", neighborhoodsProperties)
 
 
 //Mongoose connection to MongoDB
-mongoose.connect("mongodb+srv://ealbiol:Testtest11@cluster0.kuhaj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {                           //---> Conexión con MongoDB. localhost porque estamos en localhost, 27017 es el puerto de mongodb y users es la base de datos en MongoDB con la que queremos conectarnos.
+mongoose.connect("mongodb+srv://ealbiol:Testtest11@cluster0.kuhaj.mongodb.net/kiez?retryWrites=true&w=majority", {                           //---> Conexión con MongoDB. localhost porque estamos en localhost, 27017 es el puerto de mongodb y users es la base de datos en MongoDB con la que queremos conectarnos.
     useNewUrlParser: true,                                                      //---> Opciones que no hace falta aprenderse.
     useUnifiedTopology: true,                                                   //---> Opciones que no hace falta aprenderse.
     useCreateIndex: true,
