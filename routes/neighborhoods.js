@@ -60,7 +60,7 @@ const params = {
 
 //---> G E T
 router.get("/", verifyToken, (req, res) => {                  // Añadimos verifyToken para dar acceso si se tiene token
-  Neighborhood.find({}).exec((error, neighborhoods) => {
+  Neighborhood.find({ active: true }).exec((error, neighborhoods) => {
     if (error) {
       res.status(400).json({ ok: false, error });
     } else {
@@ -146,6 +146,7 @@ router.post("/filtered", verifyToken, (req, res) => {
     privateParkingDensity: privateParkingDensity,
     busLines: busLines,
     parkingStreetSlots: parkingStreetSlots,
+    active: true
     // "ubahnLines.name": body.ubahnLines,
     // "sbahnLines.name": body.sbahnLines,
   }).exec((error, neighborhoods) => {
