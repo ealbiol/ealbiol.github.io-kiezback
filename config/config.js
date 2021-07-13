@@ -27,6 +27,9 @@ module.exports = {
 
 
 
+
+
+
 // Variables de entorno: Existen en windows, linux, etc.
 // Son variables globales, disponibles desde cualquier punto, que existen en nuestro sistema operativo
 // En node se acceden a traves de 'process.env'

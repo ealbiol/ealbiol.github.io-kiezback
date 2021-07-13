@@ -207,4 +207,24 @@ Ejemplo Front: http://localhost:3001/neighborhoodprofile/Mitte
 
 
 
+
+
+
+
+//---> P U T
+router.put("/deactivate", verifyToken, (req, res) => {
+  const { neighborhoods } = req.body;
+  console.log(neighborhoods);
+  let result = Neighborhood.updateMany({ name: { $all: neighborhoods } }, { $set: { active: false } });
+  console.log(result);
+  /*.exec((error, neighborhoods) => {
+    if (error) {
+      res.status(400).json({ ok: false, error });
+    } else {
+      res.status(200).json({ ok: true, neighborhoods });
+    }
+  });*/
+});
+
+
 module.exports = router;

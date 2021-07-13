@@ -258,7 +258,15 @@ let neighborhoodSchema = new Schema({
   photo: {
     type: String,
     // required: [true, "Photo is required"],
+  },
+
+
+  active: {
+    type: Boolean,
+    default: true,
   }
+
+
 });
 
 
