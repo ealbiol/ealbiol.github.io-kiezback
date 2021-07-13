@@ -214,14 +214,24 @@ Ejemplo Front: http://localhost:3001/neighborhoodprofile/Mitte
 //---> P U T
 router.put("/deactivate", verifyToken, (req, res) => {
   const { neighborhoods } = req.body;
+  let result = "";
   console.log(neighborhoods);
   if (neighborhoods.length > 0) {
 
     neighborhoods.forEach((neighborhood) => {
-      Neighborhood.findOneAndUpdate({ name: neighborhood }, { active: false });
+      console.log("Barrio a borrar", neighborhood)
+      Neighborhood.findOneAndUpdate({ name: neighborhood }, { active: false }, (err, elementUpdated) => {
+        if (err) {
+          result += " " + err;
+        } else {
+          result += " " + elementUpdated;
+        }
+      })
+
+
     })
   }
-
+  res.status(200).json({ ok: true, result });
   /*.exec((error, neighborhoods) => {
     if (error) {
       res.status(400).json({ ok: false, error });
