@@ -215,8 +215,13 @@ Ejemplo Front: http://localhost:3001/neighborhoodprofile/Mitte
 router.put("/deactivate", verifyToken, (req, res) => {
   const { neighborhoods } = req.body;
   console.log(neighborhoods);
-  let result = Neighborhood.updateMany({ name: { $all: neighborhoods } }, { $set: { active: false } });
-  console.log(result);
+  if (neighborhoods.length > 0) {
+
+    neighborhoods.forEach((neighborhood) => {
+      Neighborhood.findOneAndUpdate({ name: neighborhood }, { active: false });
+    })
+  }
+
   /*.exec((error, neighborhoods) => {
     if (error) {
       res.status(400).json({ ok: false, error });
