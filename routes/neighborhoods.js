@@ -214,12 +214,13 @@ Ejemplo Front: http://localhost:3001/neighborhoodprofile/Mitte
 
 //---> P U T
 router.put("/deactivate", verifyToken, (req, res) => {
-  const { neighborhoods } = req.body;
+  // Recibes el objeto por parametro
+  const { NeighborhoodDelete } = req.body;
   let result = "";
-  console.log(neighborhoods);
-  if (neighborhoods.length > 0) {
+  console.log(NeighborhoodDelete);
+  if (NeighborhoodDelete.length > 0) {
 
-    neighborhoods.forEach((neighborhood) => {
+    NeighborhoodDelete.forEach((neighborhood) => {
       console.log("Barrio a borrar", neighborhood)
       Neighborhood.findOneAndUpdate({ name: neighborhood }, { active: false }, (err, elementUpdated) => {
         if (err) {
@@ -240,6 +241,7 @@ router.put("/deactivate", verifyToken, (req, res) => {
       res.status(200).json({ ok: true, neighborhoods });
     }
   });*/
+
 });
 
 
