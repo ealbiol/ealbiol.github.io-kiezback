@@ -23,13 +23,13 @@ let userSchema = new Schema({                                   //---> Creamos e
     //---> Dentro del Schema ponemos todas las propiedades que tendrá está entidad/colección (user). 
     username: {
         type: String,
-        //unique: true,  //change                                     //---> Si el email ya existe saltará un error informando que este email ya existe.
-        required: [true, "Username is required"]            //---> Si no ponemos required por defecto no lo será. El string después del true es el mensaje de error que aparecerá si el usuario no pone el username.
+        //unique: true,  //changed                                   //---> Si el email ya existe saltará un error informando que este email ya existe.
+        required: [true, "Username is required"]                        //---> Si no ponemos required por defecto no lo será. El string después del true es el mensaje de error que aparecerá si el usuario no pone el username.
     },
 
     email: {
         type: String,
-        unique: true, //change
+        unique: true, //changed
         required: [true, "Email is required"]
     },
 
