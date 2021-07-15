@@ -133,14 +133,14 @@ router.post("/login", (req, res) => {
     if (error) {
       res.status(400).json({ ok: false, error });
     } else if (!users) {
-      res.status(200).json({ ok: true, users })
+      res.status(400).json({ ok: false })
     } else {
       // Check password
       bcrypt.compare(body.password, users.password, (err, check) => {
         if (err) {
-          res.status(500).send({ message: "Error de servidor." });
+          res.status(500).send({ ok: false, message: "Error de servidor." });
         } else if (!check) {
-          res.status(404).send({ message: "La contraseña no es correcta." });
+          res.status(404).send({ ok: false, message: "La contraseña no es correcta." });
         } else {
           //Generación del Token
           const token = jwt.sign(
@@ -161,6 +161,7 @@ router.post("/login", (req, res) => {
           }
           console.log(users.username)
           res.status(200).send({
+            ok: true,
             status: "Ok. Login successful",
             token,
             adminToken,
