@@ -9,7 +9,7 @@
 
 const mongoose = require("mongoose");                           //---> Importamos mongoose.
 
-//const uniqueValidator = require("mongoose-unique-validator")    //---> Importamos mongoose-unique-validator. Nos sirve para que el mensaje de error de unique sea más entendible. Nada más.
+const uniqueValidator = require("mongoose-unique-validator")    //---> Importamos mongoose-unique-validator. Nos sirve para que el mensaje de error de unique sea más entendible. Nada más.
 
 let Schema = mongoose.Schema                                    //---> Creamos un Schema (está guardado en mongoose, es la herramienta que nos da mongoose para crear schemas)
 
@@ -30,6 +30,7 @@ let userSchema = new Schema({                                   //---> Creamos e
     },
     username: {
         type: String,
+        unique: false,
         required: [true, "Username is required"]                        //---> Si no ponemos required por defecto no lo será. El string después del true es el mensaje de error que aparecerá si el usuario no pone el username.
     },
     password: {
@@ -64,7 +65,6 @@ userSchema.methods.toJSON = function () {                                       
 //
 
 
-//userSchema.plugin(uniqueValidator, { message: "{PATH} should be unique" })                         
-//---> Ejecutar unique validator
+userSchema.plugin(uniqueValidator, { message: "{PATH} should be unique" })                          //---> Ejecutar unique validator
 
 module.exports = mongoose.model("User", userSchema);                                              //---> Exportamos hacia fuera el modelo que acabamos de crear.
