@@ -27,14 +27,14 @@ router.get("/", (req, res) => {                                         //---> H
 router.post("/register", (req, res) => {                               //---> Endpoint de los nuevos registros. Donde irán los datos del nuevo registro.
   let body = req.body;
 
-
+  console.log("BODY", body)
   const user = new User({                                             //---> Replicamos el schema diciendole que cada propiedad valdrá lo que este dentro de si misma (recordando poner body.) ---> username: body.username
     username: body.username,
     email: body.email,
     password: bcrypt.hashSync(body.password, 10),
     active: true
   });
-
+  console.log("BODY", user)
   user.save((error, savedUser) => {                                   //---> Se guarda user y ahora si se sube a MongoDB.
     if (error) {
       res.status(400).json({ ok: false, error });                   //---> Si hay algun error salta el error y sino nos devuelve el usuario guardado.
