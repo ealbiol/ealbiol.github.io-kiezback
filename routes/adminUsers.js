@@ -78,7 +78,50 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     });
 });
 
+router.put("/update-neighborhood", adminToken, (req, res) => { //Añadimos el adminToken
+    let body = req.body;
 
+    const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
+        district: { name: body.neighborhoodDistrict },
+        name: body.neighborhoodName,
+        architecturePredominance: { name: body.neighborhoodArchitecture },
+        internationality: body.neighborhoodInternationality,
+        partyWinner: { name: body.neighborhoodPartyWinner, image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
+        transportZone: { name: body.neighborhoodTransportZone },
+        activityRate: { name: body.neighborhoodActivityRate },
+        lifeCost: { name: body.neighborhoodLifeCost },
+        inhabitantsDensity: body.neighborhoodInhabitantsDensity,
+        citizenAverageAge: body.neighborhoodCitizenAverageAge,
+        gymDensity: body.neighborhoodGymDensity,
+        restaurantsDensity: { name: body.neighborhoodRestaurantsDensity },
+        supermarketsDensity: { name: body.neighborhoodsuperMarketsDensity },
+        cinemas: { name: parseInt(body.neighborhoodCinemas) },
+        museums: { name: parseInt(body.neighborhoodMuseums) },
+        nightLife: { name: body.neighborhoodNightLife },
+        airQuality: body.neighborhoodAirQuality,
+        cleanness: { name: body.neighborhoodCleanness },
+        greenAreasDensity: body.neighborhoodGreenAreasDensity,
+        noiseLevel: { name: body.neighborhoodNoiseLevel },
+        safety: body.neighborhoodSafety,
+        privateParkingDensity: body.neighborhoodPrivateParkingDensity,
+        busLines: body.neighborhoodBusLines,
+        ubahnLines: { name: body.neighborhoodUbahnLines },
+        sbahnLines: { name: body.neighborhoodSbahnLines },
+        // bikesLanesDensity: { name: body.neighborhoodBikesLanesDensity },
+        // parkingStreetSlots: { name: body.neighborhoodParkingStreetSlots },
+        lat: body.neighborhoodLat,
+        lng: body.neighborhoodLng,
+        photo: body.neighborhoodPhoto
+    });
+
+    neighborhood.save((error, savedNeighborhood) => {
+        if (error) {
+            res.status(400).json({ ok: false, error });
+        } else {
+            res.status(201).json({ ok: true, savedNeighborhood });
+        }
+    });
+});
 //---> P U T (actualizar)
 router.put("/:id", adminToken, (req, res) => {
     const id = req.params.id;

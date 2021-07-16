@@ -4,19 +4,16 @@ require("./config/config");
 
 const cors = require('cors')
 const mongoose = require("mongoose")                                            //---> Importamos mongoose        
+//Mongoose permite hacer los Schema que tenemos en models.
 const express = require("express")                                              //---> Importamos express guardándolo en una variable ya que saldrán varias cosas de expres.
 const app = express()                                                           //---> Route: Creamos la constante app (se suele poner este nombre) que va a ser lo que hemos importado en express pero llamandolo. Creará la aplicación web.
+//Express: Libreria que te permite crear rutas (ej: users). Cada ruta puede tener operaciones
+// distintas dentro (ej: login) y esas operaciones tienen un método asignado (ej: get)
 
-
-const users = require("./routes/users");                                        //---> Importamos users.js (en carpeta router) ya que todos los endpoints tienen que pasar por server.js  . Declaramos una variable que guardará la ruta de users.
-const neighborhoods = require("./routes/neighborhoods");
-const coatsOfArmsImages = require("./routes/coatsOfArmsImages");
-const technologies = require("./routes/technologies");
-const adminUsers = require("./routes/adminUsers")
-const neighborhoodsProperties = require("./routes/neighborhoodsProperties")
 
 
 //Antes de los endpoints, usamos loss Middlewares
+// Practicas para implementar una API rest
 app.use(express.json());                                                        //---> El servidor recibirá esta información en tipo json pero queremos que el servidor la reciba como un objeto de JS, como un array de objetos. Para eso se usan los middleware. Middleware transformará la info .json en array de objetos de JS. Lo haremos con express.json().
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -31,9 +28,25 @@ app.use((req, res, next) => {
 app.use(cors());
 //
 
+//RUTAS
+//---> Importamos users.js (en carpeta router) ya que todos los endpoints tienen que pasar por server.js  . Declaramos una variable que guardará la ruta de users.
+const neighborhoods = require("./routes/neighborhoods");
+const coatsOfArmsImages = require("./routes/coatsOfArmsImages");
+const technologies = require("./routes/technologies");
+const adminUsers = require("./routes/adminUsers")
+const neighborhoodsProperties = require("./routes/neighborhoodsProperties")
 
+//ip -> DNS
 //ENDPOINTS per FAMILY
-app.use("/users", users)                                                       //---> Route: Después del json aquí añadimos que el grupo entero de endpoints 'users' queremos que esten dentro de la ruta /users. Así se crean directamente y no tenemos que poner /users en users.js  . Le pasamos la ruta que esta guardada en la variable users.
+// RUTA BASE https://kiezberlinback.herokuapp.com/
+// Endpoints -> Parte de buenas practicas para crear una API rest
+
+//https://kiezberlinback.herokuapp.com/users  -> Get de users
+
+// -> Vaya a mirar en el fichero users.js de routes
+app.use("/users", require("./routes/users"))                                                                                           //---> Route: Después del json aquí añadimos que el grupo entero de endpoints 'users' queremos que esten dentro de la ruta /users. Así se crean directamente y no tenemos que poner /users en users.js  . Le pasamos la ruta que esta guardada en la variable users.
+
+//https://kiezberlinback.herokuapp.com/neighborhoods
 app.use("/neighborhoods", neighborhoods)
 app.use("/coatsOfArmsImages", coatsOfArmsImages)
 app.use("/technologies", technologies)
@@ -59,10 +72,13 @@ db.once("open", () => console.log("Connected to MongoDB succesfuly"));          
 //
 
 
-//Puerto a la escucha: http://localhost:3000/
+//Puerto a la escucha: http://localhost:3000/users
+// API de neighborhoods
+
 app.listen(process.env.PORT, () => {
     console.log("Listening on port --->", process.env.PORT);                    //---> Console.log para ver que se levanta el puerto bien
 })
+
 //
 
 

@@ -217,7 +217,6 @@ router.put("/deactivate", verifyToken, (req, res) => {
   // Recibes el objeto por parametro
   const { NeighborhoodDelete } = req.body;
   let result = "";
-  console.log(NeighborhoodDelete);
   if (NeighborhoodDelete.length > 0) {
 
     NeighborhoodDelete.forEach((neighborhood) => {

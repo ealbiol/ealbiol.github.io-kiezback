@@ -9,9 +9,11 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken");
 const { adminSecretKey } = require("../config/config");
 process.env.SEED = process.env.SEED || "MAWDKAWCKAWDM213c23";
+// IMportado el schema
 const User = require("../models/user");                                 //---> Importamos el modelo/Schema de user.
 
 //---> G E T
+// C ----------> S ------------> BBDD  -----> S ------> C
 router.get("/", (req, res) => {                                         //---> Hemos sustituido app por router.
   User.find({}).exec((error, users) => {                              //---> Similar al find de Mongo. Si el filtro está vacío me devuelve todos los documentos de la colección. Nos dará todos los usuarios ya que hemos puesto {} vacío. Primero mira si hay algun error y sino nos da users. Si por ejemplo quisieramos que solo nos devolviera los administradores tendríamos que poner .find({role: "ADMIN"})
     if (error) {
@@ -22,9 +24,10 @@ router.get("/", (req, res) => {                                         //---> H
   })
 });
 
-
+// /users/register
 //---> P O S T REGISTER 
 router.post("/register", (req, res) => {                               //---> Endpoint de los nuevos registros. Donde irán los datos del nuevo registro.
+  //"/register" es el endpoint y el nombre de la operación con método POST.
   let body = req.body;
 
   console.log("BODY", body)
@@ -123,6 +126,7 @@ router.post("/register", (req, res) => {                               //---> En
 // }
 
 //---> POST LOGIN
+// /users/login
 router.post("/login", (req, res) => {
   let body = req.body;
 
