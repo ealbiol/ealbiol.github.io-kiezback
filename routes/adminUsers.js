@@ -10,7 +10,7 @@ const adminToken = require("../middlewares/authAdmin"); //Importamos el adminTok
 function getPartyWinnerURL(partyWinnerName) {
     let url = "";
     console.log("Party", partyWinnerName.toUpperCase())
-    switch (partyWinnerName.toLowerCase()) {
+    switch (partyWinnerName.toUpperCase()) {
         case "CDU":
             url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
             break;
