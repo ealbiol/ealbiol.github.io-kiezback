@@ -37,13 +37,44 @@ function getPartyWinnerURL(partyWinnerName) {
 
 
 
+//Background Image District Coat
+function getDistrictURL(DistrictCoat) {
+    let url = "";
+    console.log("District Coat", DistrictCoat.toUpperCase())
+    switch (DistrictCoat.toUpperCase()) {
+        case "CHARLOTTENBURG-WILMERSDORF":
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg/800px-Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg.png";
+            break;
+        case "LINKE":
+            url = "https://upload.wikimedia.org/wikipedia/commons/4/45/Die_Linke_logo.svg";
+            break;
+        case "SPD":
+            url = "https://upload.wikimedia.org/wikipedia/commons/2/2d/Sozialdemokratische_Partei_Deutschlands%2C_Logo_um_2000.svg";
+            break;
+        case "AFD":
+            url = "https://upload.wikimedia.org/wikipedia/commons/4/48/AfD-Logo-2017.svg";
+            break;
+        case "GRÜNE":
+            url = "https://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
+            break;
+        default:
+            url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
+            break;
+
+    }
+    return url;
+
+}
+
+
+
 
 //---> P O S T
 router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     let body = req.body;
 
     const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
-        district: { name: body?.neighborhoodDistrict?.toLowerCase() },
+        district: { name: body?.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body?.neighborhoodDistrict) },
         name: body?.neighborhoodName?.toLowerCase(),
         architecturePredominance: { name: body?.neighborhoodArchitecture?.toLowerCase() },
         internationality: body?.neighborhoodInternationality?.toLowerCase(),
