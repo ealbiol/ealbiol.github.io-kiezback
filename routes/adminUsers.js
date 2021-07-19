@@ -92,19 +92,19 @@ function getArchitecture(ArchitectureImage) {
     let url = "";
     console.log("Architecture", ArchitectureImage.toUpperCase())
     switch (ArchitectureImage.toUpperCase()) {
-        case "OLD TOWN": //--------------->NOT WORKING!
+        case "OLD TOWN":
             url = "https://images.unsplash.com/photo-1603312158640-1f7bf7747d92?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTd8fGJlcmxpbnxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
             break;
         case "HISTORIC":
             url = "https://images.unsplash.com/photo-1518374378163-27d6bd948263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
             break;
-        case "PLATTENBAU": //--------------->NOT WORKING!
+        case "PLATTENBAU":
             url = "https://images.unsplash.com/photo-1567886189973-90b093aa7374?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
             break;
-        case "MODERN": //--------------->NOT WORKING!
+        case "MODERN":
             url = "https://images.unsplash.com/photo-1597546148584-e679cbb19259?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
             break;
-        case "NEW CONSTRUCTION": //--------------->NOT WORKING!
+        case "NEW CONSTRUCTION":
             url = "https://images.unsplash.com/photo-1567552397600-bd76be3f0f60?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
             break;
 
@@ -117,6 +117,32 @@ function getArchitecture(ArchitectureImage) {
 
 }
 
+
+
+//Background Image TransportZone
+function getTransportZone(TransportZoneColor) {
+    let url = "";
+    console.log("TransportZone", TransportZoneColor.toUpperCase())
+    switch (TransportZoneColor.toUpperCase()) {
+        case "A":
+            coloring("background", "#f1c40f", "#3498db")
+            break;
+        case "B":
+            url = "https://images.unsplash.com/photo-1518374378163-27d6bd948263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
+            break;
+        case "C":
+            url = "https://images.unsplash.com/photo-1567886189973-90b093aa7374?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
+            break;
+
+
+        default:
+            url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
+            break;
+
+    }
+    return url;
+
+}
 
 
 
