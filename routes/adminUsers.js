@@ -23,7 +23,7 @@ function getPartyWinnerURL(partyWinnerName) {
             url = "https://upload.wikimedia.org/wikipedia/commons/4/48/AfD-Logo-2017.svg";
             break;
         case "GRÜNE":
-            url = "hhttps://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
+            url = "https://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
             break;
         default:
             url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
@@ -77,7 +77,7 @@ function getDistrictURL(DistrictCoat) {
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg/800px-Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg.png";
             break;
         default:
-            url = "https://en.wikipedia.org/wiki/Boroughs_and_neighborhoods_of_Berlin#/media/File:Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Coat_of_arms_of_borough_Treptow-Koepenick.svg/800px-Coat_of_arms_of_borough_Treptow-Koepenick.svg.png";
             break;
 
     }
