@@ -119,23 +119,24 @@ function getArchitecture(ArchitectureImage) {
 
 
 
-//TRANSPORT ZONE - PENDING
+//TRANSPORT ZONE -----------> PENDING
 
 
 
 
-//Background Image Activity Rate
+/*
+//Background IMAGE ACTIVITY RATE -----------> PENDING
 function getActivityRate(ActivityRateImage) {
     let url = "";
-    console.log("Architecture", ActivityRateImage.toUpperCase())
+    console.log("Activity Rate", ActivityRateImage.toUpperCase())
     switch (ActivityRateImage.toUpperCase()) {
-        /*  case "VERY LOW":
+          case "VERY LOW":
               url = "https://images.unsplash.com/photo-1572880456050-f098c892f6c3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVybGlufGVufDB8MXwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
-              break; */
+              break; 
         case "LOW":
             url = "https://images.unsplash.com/photo-1609873963505-a5061290ec5c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
             break;
-        /* case "MEDIUM":
+         case "MEDIUM":
              url = "https://images.unsplash.com/photo-1577614741774-01b943ac66ff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
              break;
          case "HIGH":
@@ -143,7 +144,7 @@ function getActivityRate(ActivityRateImage) {
              break;
          case "VERY HIGH":
              url = "https://images.unsplash.com/photo-1578512762598-940fac99cd45?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1999&q=80";
-             break; */
+             break; 
 
         default:
             url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
@@ -153,6 +154,43 @@ function getActivityRate(ActivityRateImage) {
     return url;
 
 }
+*/
+
+
+
+
+
+
+//Background Image Restaurants
+function getRestaurants(RestaurantsImage) {
+    let url = "";
+    switch (RestaurantsImage.toUpperCase()) {
+        case "VERY LOW":
+            url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
+            break;
+        case "LOW":
+            url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
+            break;
+        case "MEDIUM":
+            url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
+            break;
+        case "HIGH":
+            url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
+            break;
+        case "VERY HIGH":
+            url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
+            break;
+
+        default:
+            url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
+            break;
+
+    }
+    return url;
+
+}
+
+
 
 
 
@@ -172,7 +210,7 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
         inhabitantsDensity: body.neighborhoodInhabitantsDensity?.toLowerCase(),
         citizenAverageAge: body.neighborhoodCitizenAverageAge?.toLowerCase(),
         gymDensity: body.neighborhoodGymDensity?.toLowerCase(),
-        restaurantsDensity: { name: body.neighborhoodRestaurantsDensity?.toLowerCase() },
+        restaurantsDensity: { name: body.neighborhoodRestaurantsDensity?.toLowerCase(), image: getRestaurants(body.neighborhoodRestaurantsDensity) },
         supermarketsDensity: { name: body.neighborhoodsuperMarketsDensity?.toLowerCase() },
         cinemas: { name: parseInt(body.neighborhoodCinemas?.toLowerCase()) },
         museums: { name: parseInt(body.neighborhoodMuseums?.toLowerCase()) },
@@ -217,7 +255,7 @@ router.put("/update-neighborhood", adminToken, (req, res) => {
         inhabitantsDensity: body.neighborhoodInhabitantsDensity,
         citizenAverageAge: body.neighborhoodCitizenAverageAge,
         gymDensity: body.neighborhoodGymDensity,
-        restaurantsDensity: { name: body.neighborhoodRestaurantsDensity },
+        restaurantsDensity: { name: body.neighborhoodRestaurantsDensity?.toLowerCase(), image: getRestaurants(body.neighborhoodRestaurantsDensity) },
         supermarketsDensity: { name: body.neighborhoodsuperMarketsDensity },
         cinemas: { name: parseInt(body.neighborhoodCinemas) },
         museums: { name: parseInt(body.neighborhoodMuseums) },
