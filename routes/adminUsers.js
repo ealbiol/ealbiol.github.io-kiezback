@@ -33,12 +33,30 @@ function getPartyWinnerURL(partyWinnerName) {
     return url;
 
 }
+
+
+//Background Image District Coat
+function getDistrictURL(DistrictCoat) {
+    let url = "";
+    console.log("District", DistrictCoat.toUpperCase())
+    switch (DistrictCoat.toUpperCase()) {
+        case "CHARLOTTENBURG-WILMERSDORF":
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg/800px-Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg.png";
+            break;
+
+
+    }
+    return url;
+
+}
+
+
 //---> P O S T
 router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     let body = req.body;
 
     const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
-        district: { name: body.neighborhoodDistrict?.toLowerCase() },
+        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
         name: body.neighborhoodName?.toLowerCase(),
         architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase() },
         internationality: body.neighborhoodInternationality?.toLowerCase(),
@@ -82,8 +100,8 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
 router.put("/update-neighborhood", adminToken, (req, res) => { //Añadimos el adminToken
     let body = req.body;
 
-    const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
-        district: { name: body.neighborhoodDistrict },
+    const neighborhood = new Neighborhood({
+        district: { name: body.neighborhoodDistrict, image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
         name: body.neighborhoodName,
         architecturePredominance: { name: body.neighborhoodArchitecture },
         internationality: body.neighborhoodInternationality,
