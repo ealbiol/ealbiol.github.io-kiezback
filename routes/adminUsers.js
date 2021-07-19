@@ -9,7 +9,7 @@ const adminToken = require("../middlewares/authAdmin"); //Importamos el adminTok
 //Background Image PartyWinner
 function getPartyWinnerURL(partyWinnerName) {
     let url = "";
-    console.log("PARTY", partyWinnerName)
+    console.log("Party", partyWinnerName.toUpperCase())
     switch (partyWinnerName.toUpperCase()) {
         case "CDU":
             url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
@@ -23,7 +23,7 @@ function getPartyWinnerURL(partyWinnerName) {
         case "AFD":
             url = "https://upload.wikimedia.org/wikipedia/commons/4/48/AfD-Logo-2017.svg";
             break;
-        case "Grüne":
+        case "GRÜNE":
             url = "hhttps://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
             break;
         default:
@@ -35,55 +35,7 @@ function getPartyWinnerURL(partyWinnerName) {
 
 }
 
-//Background Image Coat of Arma District
-function getDistrictCoatImageURL(coatImage) {
-    let url = "";
-    console.log("DISTRICT", coatImage)
-    switch (coatImage.toUpperCase()) {
-        case "Charlottenburg-Wilmersdorf":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg/800px-Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg.png";
-            break;
-        case "Friedrichshain-Kreuzberg":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg/800px-Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg.png";
-            break;
-        case "Lichtenberg":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Coat_of_arms_of_borough_Lichtenberg.svg/800px-Coat_of_arms_of_borough_Lichtenberg.svg.png";
-            break;
-        case "Marzahn-Hellersdorf":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Coat_of_arms_of_borough_Marzahn-Hellersdorf.svg/800px-Coat_of_arms_of_borough_Marzahn-Hellersdorf.svg.png";
-            break;
-        case "Mitte":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Coat_of_arms_of_borough_Mitte.svg/800px-Coat_of_arms_of_borough_Mitte.svg.png";
-            break;
-        case "Neukölln":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coat_of_arms_of_borough_Neukoelln.svg/800px-Coat_of_arms_of_borough_Neukoelln.svg.png";
-            break;
-        case "Pankow":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Coat_of_arms_of_borough_Pankow.svg/800px-Coat_of_arms_of_borough_Pankow.svg.png";
-            break;
-        case "Reinickendorf":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Coat_of_arms_of_borough_Reinickendorf.svg/800px-Coat_of_arms_of_borough_Reinickendorf.svg.png";
-            break;
-        case "Spandau":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Coat_of_arms_of_borough_Spandau.svg/800px-Coat_of_arms_of_borough_Spandau.svg.png";
-            break;
-        case "Steglitz-Zehlendorf":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Coat_of_arms_of_borough_Steglitz-Zehlendorf.svg/800px-Coat_of_arms_of_borough_Steglitz-Zehlendorf.svg.png";
-            break;
-        case "Tempelhof-Schöneberg":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Coat_of_arms_of_borough_Tempelhof-Schoeneberg.svg/800px-Coat_of_arms_of_borough_Tempelhof-Schoeneberg.svg.png";
-            break;
-        case "Treptow-Köpenick":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Coat_of_arms_of_borough_Treptow-Koepenick.svg/800px-Coat_of_arms_of_borough_Treptow-Koepenick.svg.png";
-            break;
-        default:
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coat_of_arms_of_borough_Neukoelln.svg/800px-Coat_of_arms_of_borough_Neukoelln.svg.png";
-            break;
 
-    }
-    return url;
-
-}
 
 
 //---> P O S T
@@ -91,7 +43,7 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     let body = req.body;
 
     const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
-        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictCoatImageURL(body.neighborhoodDistrict) },
+        district: { name: body.neighborhoodDistrict?.toLowerCase() },
         name: body.neighborhoodName?.toLowerCase(),
         architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase() },
         internationality: body.neighborhoodInternationality?.toLowerCase(),
