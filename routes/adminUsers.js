@@ -129,21 +129,21 @@ function getActivityRate(ActivityRateImage) {
     let url = "";
     console.log("Architecture", ActivityRateImage.toUpperCase())
     switch (ActivityRateImage.toUpperCase()) {
-        case "VERY LOW":
-            url = "https://images.unsplash.com/photo-1572880456050-f098c892f6c3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVybGlufGVufDB8MXwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
-            break;
+        /*  case "VERY LOW":
+              url = "https://images.unsplash.com/photo-1572880456050-f098c892f6c3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVybGlufGVufDB8MXwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+              break; */
         case "LOW":
             url = "https://images.unsplash.com/photo-1609873963505-a5061290ec5c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
             break;
-        case "MEDIUM":
-            url = "https://images.unsplash.com/photo-1577614741774-01b943ac66ff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
-            break;
-        case "HIGH":
-            url = "https://images.unsplash.com/photo-1615488957865-5aa226625215?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80";
-            break;
-        case "VERY HIGH":
-            url = "https://images.unsplash.com/photo-1578512762598-940fac99cd45?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1999&q=80";
-            break;
+        /* case "MEDIUM":
+             url = "https://images.unsplash.com/photo-1577614741774-01b943ac66ff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
+             break;
+         case "HIGH":
+             url = "https://images.unsplash.com/photo-1615488957865-5aa226625215?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80";
+             break;
+         case "VERY HIGH":
+             url = "https://images.unsplash.com/photo-1578512762598-940fac99cd45?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1999&q=80";
+             break; */
 
         default:
             url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
