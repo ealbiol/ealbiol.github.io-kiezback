@@ -92,11 +92,14 @@ function getArchitecture(ArchitectureImage) {
     let url = "";
     console.log("Architecture", ArchitectureImage.toUpperCase())
     switch (ArchitectureImage.toUpperCase()) {
-        case "Old Town":
+        case "OLD TOWN": //--------------->NOT WORKING!
             url = "https://images.unsplash.com/photo-1603312158640-1f7bf7747d92?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTd8fGJlcmxpbnxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
             break;
         case "HISTORIC":
             url = "https://images.unsplash.com/photo-1518374378163-27d6bd948263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
+            break;
+        case "PLATTENBAU":
+            url = "https://images.unsplash.com/photo-1567886189973-90b093aa7374?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
             break;
 
         default:
