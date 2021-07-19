@@ -43,6 +43,9 @@ function getDistrictURL(DistrictCoat) {
         case "CHARLOTTENBURG-WILMERSDORF":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg/800px-Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg.png";
             break;
+        case "FRIEDRICHSHAIN-KREUZBERG":
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg/800px-Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg.png";
+            break;
         default:
             url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
             break;
