@@ -26,7 +26,7 @@ function getPartyWinnerURL(partyWinnerName) {
             url = "https://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
             break;
         default:
-            url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
+            url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
             break;
 
     }
@@ -77,7 +77,7 @@ function getDistrictURL(DistrictCoat) {
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg/800px-Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg.png";
             break;
         default:
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Coat_of_arms_of_borough_Treptow-Koepenick.svg/800px-Coat_of_arms_of_borough_Treptow-Koepenick.svg.png";
+            url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
             break;
 
     }
@@ -98,12 +98,18 @@ function getArchitecture(ArchitectureImage) {
         case "HISTORIC":
             url = "https://images.unsplash.com/photo-1518374378163-27d6bd948263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
             break;
-        case "PLATTENBAU":
+        case "PLATTENBAU": //--------------->NOT WORKING!
             url = "https://images.unsplash.com/photo-1567886189973-90b093aa7374?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
+            break;
+        case "MODERN": //--------------->NOT WORKING!
+            url = "https://images.unsplash.com/photo-1597546148584-e679cbb19259?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
+            break;
+        case "NEW CONSTRUCTION": //--------------->NOT WORKING!
+            url = "https://images.unsplash.com/photo-1567552397600-bd76be3f0f60?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
             break;
 
         default:
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Coat_of_arms_of_borough_Treptow-Koepenick.svg/800px-Coat_of_arms_of_borough_Treptow-Koepenick.svg.png";
+            url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
             break;
 
     }
