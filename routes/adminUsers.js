@@ -86,6 +86,29 @@ function getDistrictURL(DistrictCoat) {
 }
 
 
+
+//Background Image Architecture
+function getArchitecture(ArchitectureImage) {
+    let url = "";
+    console.log("Architecture", ArchitectureImage.toUpperCase())
+    switch (ArchitectureImage.toUpperCase()) {
+        case "HISTORIC":
+            url = "https://images.unsplash.com/photo-1518374378163-27d6bd948263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
+            break;
+
+        default:
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Coat_of_arms_of_borough_Treptow-Koepenick.svg/800px-Coat_of_arms_of_borough_Treptow-Koepenick.svg.png";
+            break;
+
+    }
+    return url;
+
+}
+
+
+
+
+
 //---> P O S T
 router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     let body = req.body;
@@ -93,7 +116,7 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
         district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body.neighborhoodDistrict) },
         name: body.neighborhoodName?.toLowerCase(),
-        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase() },
+        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality?.toLowerCase(),
         partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
         transportZone: { name: body.neighborhoodTransportZone?.toLowerCase() },
@@ -138,7 +161,7 @@ router.put("/update-neighborhood", adminToken, (req, res) => { //Añadimos el ad
     const neighborhood = new Neighborhood({
         district: { name: body.neighborhoodDistrict, image: getDistrictURL(body.neighborhoodDistrict) },
         name: body.neighborhoodName,
-        architecturePredominance: { name: body.neighborhoodArchitecture },
+        architecturePredominance: { name: body.neighborhoodArchitecture, image: getArchitecture(body.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality,
         partyWinner: { name: body.neighborhoodPartyWinner, image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
         transportZone: { name: body.neighborhoodTransportZone },
