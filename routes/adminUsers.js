@@ -119,21 +119,31 @@ function getArchitecture(ArchitectureImage) {
 
 
 
-//Background Image TransportZone
-function getTransportZone(TransportZoneColor) {
-    let url = "";
-    console.log("TransportZone", TransportZoneColor.toUpperCase())
-    switch (TransportZoneColor.toUpperCase()) {
-        case "A":
-            coloring("background", "#f1c40f", "#3498db")
-            break;
-        case "B":
-            url = "https://images.unsplash.com/photo-1518374378163-27d6bd948263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
-            break;
-        case "C":
-            url = "https://images.unsplash.com/photo-1567886189973-90b093aa7374?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
-            break;
+//TRANSPORT ZONE - PENDING
 
+
+
+
+//Background Image Activity Rate
+function getActivityRate(ActivityRateImage) {
+    let url = "";
+    console.log("Architecture", ActivityRateImage.toUpperCase())
+    switch (ActivityRateImage.toUpperCase()) {
+        case "VERY LOW":
+            url = "https://images.unsplash.com/photo-1572880456050-f098c892f6c3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVybGlufGVufDB8MXwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+            break;
+        case "LOW":
+            url = "https://images.unsplash.com/photo-1609873963505-a5061290ec5c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
+            break;
+        case "MEDIUM":
+            url = "https://images.unsplash.com/photo-1577614741774-01b943ac66ff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
+            break;
+        case "HIGH":
+            url = "https://images.unsplash.com/photo-1615488957865-5aa226625215?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80";
+            break;
+        case "VERY HIGH":
+            url = "https://images.unsplash.com/photo-1578512762598-940fac99cd45?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1999&q=80";
+            break;
 
         default:
             url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
@@ -143,7 +153,6 @@ function getTransportZone(TransportZoneColor) {
     return url;
 
 }
-
 
 
 
@@ -157,8 +166,8 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
         architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality?.toLowerCase(),
         partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
-        transportZone: { name: body.neighborhoodTransportZone?.toLowerCase(), color: getTransportZone(body.neighborhoodTransportZone) },
-        activityRate: { name: body.neighborhoodActivityRate?.toLowerCase() },
+        transportZone: { name: body.neighborhoodTransportZone?.toLowerCase() },
+        activityRate: { name: body.neighborhoodActivityRate?.toLowerCase(), image: getActivityRate(body.neighborhoodActivityRate) },
         lifeCost: { name: body.neighborhoodLifeCost?.toLowerCase() },
         inhabitantsDensity: body.neighborhoodInhabitantsDensity?.toLowerCase(),
         citizenAverageAge: body.neighborhoodCitizenAverageAge?.toLowerCase(),
@@ -202,8 +211,8 @@ router.put("/update-neighborhood", adminToken, (req, res) => {
         architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality,
         partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
-        transportZone: { name: body.neighborhoodTransportZone, color: getTransportZone(body.neighborhoodTransportZone) },
-        activityRate: { name: body.neighborhoodActivityRate },
+        transportZone: { name: body.neighborhoodTransportZone },
+        activityRate: { name: body.neighborhoodActivityRate, image: getActivityRate(body.neighborhoodActivityRate) },
         lifeCost: { name: body.neighborhoodLifeCost },
         inhabitantsDensity: body.neighborhoodInhabitantsDensity,
         citizenAverageAge: body.neighborhoodCitizenAverageAge,
