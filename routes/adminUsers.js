@@ -119,13 +119,13 @@ function getArchitecture(ArchitectureImage) {
 
 
 
-//TRANSPORT ZONE -----------> PENDING
+//TRANSPORT ZONE ----------------------------------------> PENDING
 
 
 
 
 
-//Background IMAGE ACTIVITY RATE -----------> PENDING
+//Background IMAGE ACTIVITY RATE 
 function getActivityRate(ActivityRateImage) {
     let url = "";
     console.log("Activity Rate", ActivityRateImage.toUpperCase())
