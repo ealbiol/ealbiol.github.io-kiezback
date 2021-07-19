@@ -9,8 +9,8 @@ const adminToken = require("../middlewares/authAdmin"); //Importamos el adminTok
 //Background Image PartyWinner
 function getPartyWinnerURL(partyWinnerName) {
     let url = "";
-    console.log("Party", partyWinnerName.toUpperCase())
-    switch (partyWinnerName.toUpperCase()) {
+    console.log("Party", partyWinnerName.toLowerCase())
+    switch (partyWinnerName.toLowerCase()) {
         case "CDU":
             url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
             break;
@@ -38,7 +38,7 @@ function getPartyWinnerURL(partyWinnerName) {
 //Background Image Coat of Arma District
 function getDistrictCoatImageURL(coatImage) {
     let url = "";
-    switch (coatImage.toUpperCase()) {
+    switch (coatImage.toLowerCase()) {
         case "Charlottenburg-Wilmersdorf":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg/800px-Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg.png";
             break;
@@ -76,7 +76,7 @@ function getDistrictCoatImageURL(coatImage) {
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Coat_of_arms_of_borough_Treptow-Koepenick.svg/800px-Coat_of_arms_of_borough_Treptow-Koepenick.svg.png";
             break;
         default:
-            url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coat_of_arms_of_borough_Neukoelln.svg/800px-Coat_of_arms_of_borough_Neukoelln.svg.png";
             break;
 
     }
