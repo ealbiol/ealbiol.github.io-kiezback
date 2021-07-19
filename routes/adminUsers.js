@@ -163,9 +163,9 @@ function getActivityRate(ActivityRateImage) {
 function getRestaurants(RestaurantsImage) {
     let url = "";
     switch (RestaurantsImage.toUpperCase()) {
-        /* case "VERY LOW":
-             url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
-             break; */
+        case "VERY LOW":
+            url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
+            break;
         case "LOW":
             url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
             break;
@@ -175,9 +175,9 @@ function getRestaurants(RestaurantsImage) {
         case "HIGH":
             url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
             break;
-        /* case "VERY HIGH":
-             url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
-             break; */
+        case "VERY HIGH":
+            url = "https://images.unsplash.com/photo-1590903992199-d62079236c91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
+            break;
 
         default:
             url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
