@@ -158,9 +158,7 @@ function getActivityRate(ActivityRateImage) {
 
 
 
-
-
-
+/*
 //Background Image Restaurants
 function getRestaurants(RestaurantsImage) {
     let url = "";
@@ -189,7 +187,7 @@ function getRestaurants(RestaurantsImage) {
     return url;
 
 }
-
+*/
 
 
 
