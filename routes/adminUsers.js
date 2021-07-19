@@ -162,11 +162,11 @@ router.put("/update-neighborhood", adminToken, (req, res) => { //Añadimos el ad
     let body = req.body;
 
     const neighborhood = new Neighborhood({
-        district: { name: body.neighborhoodDistrict, image: getDistrictURL(body.neighborhoodDistrict) },
+        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body.neighborhoodDistrict) },
         name: body.neighborhoodName,
-        architecturePredominance: { name: body.neighborhoodArchitecture, image: getArchitecture(body.neighborhoodArchitecture) },
+        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality,
-        partyWinner: { name: body.neighborhoodPartyWinner, image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
+        partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
         transportZone: { name: body.neighborhoodTransportZone },
         activityRate: { name: body.neighborhoodActivityRate },
         lifeCost: { name: body.neighborhoodLifeCost },
