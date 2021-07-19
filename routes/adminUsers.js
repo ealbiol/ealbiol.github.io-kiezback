@@ -23,7 +23,7 @@ function getPartyWinnerURL(partyWinnerName) {
         case "AFD":
             url = "https://upload.wikimedia.org/wikipedia/commons/4/48/AfD-Logo-2017.svg";
             break;
-        case "grüne":
+        case "GRÜNE":
             url = "hhttps://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
             break;
         default:
@@ -39,40 +39,40 @@ function getPartyWinnerURL(partyWinnerName) {
 function getDistrictCoatImageURL(coatImage) {
     let url = "";
     switch (coatImage.toUpperCase()) {
-        case "CHARLOTTENBURG-WILMERSDORF":
+        case "Charlottenburg-Wilmersdorf":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg/800px-Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg.png";
             break;
-        case "FRIEDRICHSHAIN-KREUZBERG":
+        case "Friedrichshain-Kreuzberg":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg/800px-Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg.png";
             break;
-        case "LICHTENBERG":
+        case "Lichtenberg":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Coat_of_arms_of_borough_Lichtenberg.svg/800px-Coat_of_arms_of_borough_Lichtenberg.svg.png";
             break;
-        case "MARZAHN-HELLERSDORF":
+        case "Marzahn-Hellersdorf":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Coat_of_arms_of_borough_Marzahn-Hellersdorf.svg/800px-Coat_of_arms_of_borough_Marzahn-Hellersdorf.svg.png";
             break;
-        case "MITTE":
+        case "Mitte":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Coat_of_arms_of_borough_Mitte.svg/800px-Coat_of_arms_of_borough_Mitte.svg.png";
             break;
-        case "NEUKÖLNN":
+        case "Neukölln":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coat_of_arms_of_borough_Neukoelln.svg/800px-Coat_of_arms_of_borough_Neukoelln.svg.png";
             break;
-        case "PANKOW":
+        case "Pankow":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Coat_of_arms_of_borough_Pankow.svg/800px-Coat_of_arms_of_borough_Pankow.svg.png";
             break;
-        case "REINICKENDORF":
+        case "Reinickendorf":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Coat_of_arms_of_borough_Reinickendorf.svg/800px-Coat_of_arms_of_borough_Reinickendorf.svg.png";
             break;
-        case "SPANDAU":
+        case "Spandau":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Coat_of_arms_of_borough_Spandau.svg/800px-Coat_of_arms_of_borough_Spandau.svg.png";
             break;
-        case "STEGLITZ-ZEHLENDORF":
+        case "Steglitz-Zehlendorf":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Coat_of_arms_of_borough_Steglitz-Zehlendorf.svg/800px-Coat_of_arms_of_borough_Steglitz-Zehlendorf.svg.png";
             break;
-        case "TEMPELHOF-SCHÖNEBERG":
+        case "Tempelhof-Schöneberg":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Coat_of_arms_of_borough_Tempelhof-Schoeneberg.svg/800px-Coat_of_arms_of_borough_Tempelhof-Schoeneberg.svg.png";
             break;
-        case "TREPTOW-KÖPENICK":
+        case "Treptow-Köpenick":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Coat_of_arms_of_borough_Treptow-Koepenick.svg/800px-Coat_of_arms_of_borough_Treptow-Koepenick.svg.png";
             break;
         default:
