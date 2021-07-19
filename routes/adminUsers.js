@@ -38,6 +38,7 @@ function getPartyWinnerURL(partyWinnerName) {
 //Background Image Coat of Arma District
 function getDistrictCoatImageURL(coatImage) {
     let url = "";
+    console.log("DISTRICT", coatImage)
     switch (coatImage.toUpperCase()) {
         case "Charlottenburg-Wilmersdorf":
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg/800px-Coat_of_arms_of_Charlottenburg-Wilmersdorf.svg.png";
