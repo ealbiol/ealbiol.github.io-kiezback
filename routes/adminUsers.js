@@ -74,7 +74,7 @@ function getDistrictURL(DistrictCoat) {
             url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Coat_of_arms_of_borough_Tempelhof-Schoeneberg.svg/800px-Coat_of_arms_of_borough_Tempelhof-Schoeneberg.svg.png";
             break;
         case "TREPTOW-KÖPENICK":
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Coat_of_arms_of_borough_Treptow-Koepenick.svg/800px-Coat_of_arms_of_borough_Treptow-Koepenick.svg.png";
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg/800px-Coat_of_arms_of_borough_Friedrichshain-Kreuzberg.svg.png";
             break;
         default:
             url = "https://en.wikipedia.org/wiki/Boroughs_and_neighborhoods_of_Berlin#/media/File:Mural_crown_of_the_coat_of_arms_of_the_Berlin_boroughs.svg";
@@ -84,11 +84,6 @@ function getDistrictURL(DistrictCoat) {
     return url;
 
 }
-
-
-
-
-
 
 
 //---> P O S T
