@@ -24,7 +24,7 @@ function getPartyWinnerURL(partyWinnerName) {
             url = "https://upload.wikimedia.org/wikipedia/commons/4/48/AfD-Logo-2017.svg";
             break;
         case "GRÜNE":
-            url = "hhttps://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
+            url = "https://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
             break;
         default:
             url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
