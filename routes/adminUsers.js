@@ -56,7 +56,7 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     let body = req.body;
 
     const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
-        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
+        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodDistrict) },
         name: body.neighborhoodName?.toLowerCase(),
         architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase() },
         internationality: body.neighborhoodInternationality?.toLowerCase(),
@@ -101,7 +101,7 @@ router.put("/update-neighborhood", adminToken, (req, res) => { //Añadimos el ad
     let body = req.body;
 
     const neighborhood = new Neighborhood({
-        district: { name: body.neighborhoodDistrict, image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
+        district: { name: body.neighborhoodDistrict, image: getPartyWinnerURL(body.neighborhoodDistrict) },
         name: body.neighborhoodName,
         architecturePredominance: { name: body.neighborhoodArchitecture },
         internationality: body.neighborhoodInternationality,
