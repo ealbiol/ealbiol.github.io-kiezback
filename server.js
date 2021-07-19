@@ -89,6 +89,66 @@ app.listen(process.env.PORT, () => {
 
 
 
+/* B A S I C  C O N C E P T S
+
+Proceso habitual del relaciones C/S/DDBB:
+C  -----> S --------> BBDD  ------ > S --------> C
+
+
+Servidor:
+Direccion: IP -> Direccion lógica de una máquina -> Donde esta tu servidor -> Nuestro ejemplo : https://kiezberlinback.herokuapp.com/
+DNS -> Domain -> Transforma una url en formato legible para los humanos en formato IP.
+
+Servidor : API rest -> Estandares a seguir para un tipo de comunicación conctreta a través de JSON's.
+
+
+DNS
+https://kiezberlinback.herokuapp.com/ === 123.123.123.124
+http://localhost  === 127.127.123.124
+
+
+API rest.
+ :3000/user -> Operaciones que implementes para esa ruta:
+ Ejemplos:
+    /login
+    /register
+    /.....
+ :3000/neighborhood
+    /get-neighborhood
+    /delete-neighborhood
+    /updata-neighborhood
+    /create-neighborhood
+    /filtered-neighborhood
+        /......
+
+
+Definición E: Toda la app se conecta al mismo puerto (ej: 3000) (puerto que está a la escucha) donde en el hay varias "parcelas"/RUTAS donde residen
+operaciones especificas. Como por ejemplo la operación "/login". Todas las operaciones tienen un método especifico del CRUD.
+
+Ejemplos:
+
+Ejemplo de Puerto: 3000
+Ejemplo de Ruta: /users
+Ejemplo de operación dentro de la Ruta /users/: users/login <--
+Ejemplo de método en la operación: GET
+
+// RUTA BASE https://kiezberlinback.herokuapp.com/
+
+
+//Express: Libreria que te permite crear rutas (ej: users). Cada ruta puede tener operaciones
+// distintas dentro (ej: login) y esas operaciones tienen un método asignado (ej: get)
+
+
+//Mongoose permite hacer los Schema que tenemos en models.
+
+//Endpoint:   "/register" es el endpoint y el nombre de la operación con método POST.
+Endpoint es el último elemento de la ruta.
+*/
+
+
+
+
+
 
 
 
