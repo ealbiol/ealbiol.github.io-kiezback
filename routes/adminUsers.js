@@ -73,8 +73,8 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
         sbahnLines: { name: body?.neighborhoodSbahnLines?.toLowerCase() },
         // bikesLanesDensity: { name: body?.neighborhoodBikesLanesDensity },
         // parkingStreetSlots: { name: body?.neighborhoodParkingStreetSlots },
-        lat: body?.neighborhoodLat?.toLowerCase(),
-        lng: body?.neighborhoodLng?.toLowerCase(),
+        lat: body?.neighborhoodLat,
+        lng: body?.neighborhoodLng,
         photo: body?.neighborhoodPhoto?.toLowerCase()
     });
 
