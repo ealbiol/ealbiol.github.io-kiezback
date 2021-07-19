@@ -212,7 +212,7 @@ router.put("/update-neighborhood", adminToken, (req, res) => {
         internationality: body.neighborhoodInternationality,
         partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
         transportZone: { name: body.neighborhoodTransportZone },
-        activityRate: { name: body.neighborhoodActivityRate, image: getActivityRate(body.neighborhoodActivityRate) },
+        activityRate: { name: body.neighborhoodActivityRate?.toLowerCase(), image: getActivityRate(body.neighborhoodActivityRate) },
         lifeCost: { name: body.neighborhoodLifeCost },
         inhabitantsDensity: body.neighborhoodInhabitantsDensity,
         citizenAverageAge: body.neighborhoodCitizenAverageAge,
