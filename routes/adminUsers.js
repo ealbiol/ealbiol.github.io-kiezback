@@ -197,13 +197,13 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     let body = req.body;
 
     const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
-        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body.neighborhoodDistrict) },
+        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body?.neighborhoodDistrict) },
         name: body.neighborhoodName?.toLowerCase(),
-        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body.neighborhoodArchitecture) },
+        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body?.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality?.toLowerCase(),
-        partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
+        partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body?.neighborhoodPartyWinner) },
         transportZone: { name: body.neighborhoodTransportZone?.toLowerCase() },
-        activityRate: { name: body.neighborhoodActivityRate?.toLowerCase(), image: getActivityRate(body.neighborhoodActivityRate) },
+        activityRate: { name: body.neighborhoodActivityRate?.toLowerCase(), image: getActivityRate(body?.neighborhoodActivityRate) },
         lifeCost: { name: body.neighborhoodLifeCost?.toLowerCase() },
         inhabitantsDensity: body.neighborhoodInhabitantsDensity?.toLowerCase(),
         citizenAverageAge: body.neighborhoodCitizenAverageAge?.toLowerCase(),
@@ -242,13 +242,13 @@ router.put("/update-neighborhood", adminToken, (req, res) => {
     let body = req.body;
 
     const neighborhood = new Neighborhood({
-        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body.neighborhoodDistrict) },
+        district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body?.neighborhoodDistrict) },
         name: body.neighborhoodName,
-        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body.neighborhoodArchitecture) },
+        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body?.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality,
-        partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
+        partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body?.neighborhoodPartyWinner) },
         transportZone: { name: body.neighborhoodTransportZone },
-        activityRate: { name: body.neighborhoodActivityRate?.toLowerCase(), image: getActivityRate(body.neighborhoodActivityRate) },
+        activityRate: { name: body.neighborhoodActivityRate?.toLowerCase(), image: getActivityRate(body?.neighborhoodActivityRate) },
         lifeCost: { name: body.neighborhoodLifeCost },
         inhabitantsDensity: body.neighborhoodInhabitantsDensity,
         citizenAverageAge: body.neighborhoodCitizenAverageAge,
