@@ -23,7 +23,7 @@ function getPartyWinnerURL(partyWinnerName) {
             url = "https://upload.wikimedia.org/wikipedia/commons/4/48/AfD-Logo-2017.svg";
             break;
         case "GRÜNE":
-            url = "hhttps://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
+            url = "https://upload.wikimedia.org/wikipedia/commons/5/51/B%C3%BCndnis_90_-_Die_Gr%C3%BCnen_Logo_%28transparent%29.svg";
             break;
         default:
             url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
@@ -86,6 +86,39 @@ function getDistrictURL(DistrictCoat) {
 }
 
 
+
+//Background Image Architecture
+function getArchitectureURL(ArchitectureName) {
+    let url = "";
+    console.log("Architecture", ArchitectureName.toUpperCase())
+    switch (ArchitectureName.toUpperCase()) {
+        case "OLD TOWN":
+            url = "https://images.unsplash.com/photo-1603312158640-1f7bf7747d92?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTd8fGJlcmxpbnxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+            break;
+        case "HISTORIC":
+            url = "https://images.unsplash.com/photo-1518374378163-27d6bd948263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
+            break;
+        case "PLATTENBAU":
+            url = "https://images.unsplash.com/photo-1567886189973-90b093aa7374?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80a";
+            break;
+        case "MODERN":
+            url = "https://images.unsplash.com/photo-1597546148584-e679cbb19259?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80";
+            break;
+        case "NEW CONSTRUCTION":
+            url = "https://images.unsplash.com/photo-1567552397600-bd76be3f0f60?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+            break;
+        default:
+            url = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Cdu-logo.svg";
+            break;
+
+    }
+    return url;
+
+}
+
+
+
+
 //---> P O S T
 router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     let body = req.body;
@@ -93,7 +126,7 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
         district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body.neighborhoodDistrict) },
         name: body.neighborhoodName?.toLowerCase(),
-        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase() },
+        architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitectureURL(body.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality?.toLowerCase(),
         partyWinner: { name: body.neighborhoodPartyWinner?.toLowerCase(), image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
         transportZone: { name: body.neighborhoodTransportZone?.toLowerCase() },
@@ -138,7 +171,7 @@ router.put("/update-neighborhood", adminToken, (req, res) => { //Añadimos el ad
     const neighborhood = new Neighborhood({
         district: { name: body.neighborhoodDistrict, image: getDistrictURL(body.neighborhoodDistrict) },
         name: body.neighborhoodName,
-        architecturePredominance: { name: body.neighborhoodArchitecture },
+        architecturePredominance: { name: body.neighborhoodArchitecture, image: getArchitectureURL(body.neighborhoodArchitecture) },
         internationality: body.neighborhoodInternationality,
         partyWinner: { name: body.neighborhoodPartyWinner, image: getPartyWinnerURL(body.neighborhoodPartyWinner) },
         transportZone: { name: body.neighborhoodTransportZone },
