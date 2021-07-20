@@ -238,6 +238,7 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
     });
 });
 
+
 router.put("/update-neighborhood", adminToken, (req, res) => {
     let body = req.body;
 
