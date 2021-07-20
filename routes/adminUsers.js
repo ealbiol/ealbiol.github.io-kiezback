@@ -295,11 +295,11 @@ router.put("/update-neighborhood/:id", adminToken, (req, res) => {
 
     Neighborhood.findByIdAndUpdate(id,
         neighborhood,
-        (error, savedNeighborhood) => {
+        (error, updatedNeighborhood) => {
             if (error) {
                 res.status(400).json({ ok: false, error });
             } else {
-                res.status(201).json({ ok: true, savedNeighborhood });
+                res.status(201).json({ ok: true, updatedNeighborhood });
             }
         });
 });
