@@ -2,7 +2,7 @@
 
 // ---> Variable de entorno para el PUERTO
 //PORT
-process.env.PORT = process.env.PORT || 3000;                //---> En el servidor real se usará process.env.PORT. En localhost 3000.
+process.env.PORT = process.env.PORT || 3001;                //---> En el servidor real se usará process.env.PORT. En localhost 3000.
 
 const adminSecretKey = "A2gar4awdadaw";
 
