@@ -61,9 +61,9 @@ router.post("/login", (req, res) => {
     } else {
       bcrypt.compare(body.password, users.password, (err, check) => {
         if (err) {
-          res.status(500).send({ ok: false, message: "Error de servidor." });
+          res.status(500).send({ ok: false, message: "Server Error." });
         } else if (!check) {
-          res.status(404).send({ ok: false, message: "La contraseña no es correcta." });
+          res.status(404).send({ ok: false, message: "Wrong Password." });
         } else {
           const token = jwt.sign(
             { user: users },
@@ -83,7 +83,7 @@ router.post("/login", (req, res) => {
           console.log(users.username)
           res.status(200).send({
             ok: true,
-            status: "Ok. Login successful",
+            status: "Ok. Login successful.",
             token,
             adminToken,
             userName: users.username,
