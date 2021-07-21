@@ -27,7 +27,12 @@ npm install
 ## Usage
 
 ```sh
-npm run start
+npm start 
+```
+
+# with nodemon:
+```sh
+npm dev 
 ```
 
 ## Run tests
