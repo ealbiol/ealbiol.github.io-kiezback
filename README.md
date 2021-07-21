@@ -15,7 +15,7 @@
 > When arriving to a new city we often get a flat in a rush and with little information about the area we are settling in. Kiez provides you with all the neighborhoods information so that you can move not only to a nice home but to an area that fits with your criteria.
 
 
-### 🏠 [Homepage](https://github.com/ealbiol/kiezfront)
+### 🏠 [Homepage](https://github.com/ealbiol/kiezback)
 
 ### ✨ [Demo](https://kiezberlin.herokuapp.com)
 
