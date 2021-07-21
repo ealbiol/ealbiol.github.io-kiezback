@@ -2,8 +2,8 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const Neighborhood = require("../models/neighborhood"); //Del modelo neighborhood creará una nueva instancia si hacemos POST.
-const adminToken = require("../middlewares/authAdmin"); //Importamos el adminToken
+const Neighborhood = require("../models/neighborhood");
+const adminToken = require("../middlewares/authAdmin");
 const { discriminator } = require("../models/user");
 
 //Background Image PartyWinnerURL
@@ -128,7 +128,6 @@ function getArchitecture(ArchitectureImage) {
 
 
 
-//TRANSPORT ZONE ----------------------------------------> PENDING
 
 
 
@@ -208,10 +207,10 @@ function getRestaurants(RestaurantsImage) {
 
 
 //---> P O S T
-router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
+router.post("/", adminToken, (req, res) => {
     let body = req.body;
 
-    const neighborhood = new Neighborhood({ //Del modelo neighborhood creará una nueva instancia si hacemos POST.
+    const neighborhood = new Neighborhood({
         district: { name: body.neighborhoodDistrict?.toLowerCase(), image: getDistrictURL(body?.neighborhoodDistrict) },
         name: body.neighborhoodName?.toLowerCase(),
         architecturePredominance: { name: body.neighborhoodArchitecture?.toLowerCase(), image: getArchitecture(body?.neighborhoodArchitecture) },
@@ -235,10 +234,6 @@ router.post("/", adminToken, (req, res) => { //Añadimos el adminToken
         safety: body.neighborhoodSafety?.toLowerCase(),
         privateParkingDensity: body.neighborhoodPrivateParkingDensity?.toLowerCase(),
         busLines: body.neighborhoodBusLines?.toLowerCase(),
-        // ubahnLines: { name: body.neighborhoodUbahnLines?.toLowerCase() },
-        // sbahnLines: { name: body.neighborhoodSbahnLines?.toLowerCase() },
-        // bikesLanesDensity: { name: body.neighborhoodBikesLanesDensity },
-        // parkingStreetSlots: { name: body.neighborhoodParkingStreetSlots },
         lat: body.neighborhoodLat,
         lng: body.neighborhoodLng,
         photo: body.neighborhoodPhoto?.toLowerCase()
@@ -283,10 +278,6 @@ router.put("/update-neighborhood/:id", adminToken, (req, res) => {
         safety: body.neighborhoodSafety,
         privateParkingDensity: body.neighborhoodPrivateParkingDensity,
         busLines: body.neighborhoodBusLines,
-        // ubahnLines: { name: body.neighborhoodUbahnLines },
-        // sbahnLines: { name: body.neighborhoodSbahnLines },
-        // bikesLanesDensity: { name: body.neighborhoodBikesLanesDensity },
-        // parkingStreetSlots: { name: body.neighborhoodParkingStreetSlots },
         lat: body.neighborhoodLat,
         lng: body.neighborhoodLng,
         photo: body.neighborhoodPhoto
@@ -303,7 +294,7 @@ router.put("/update-neighborhood/:id", adminToken, (req, res) => {
             }
         });
 });
-//---> P U T (actualizar)
+//---> P U T 
 router.put("/:id", adminToken, (req, res) => {
     const id = req.params.id;
     const body = req.body;
@@ -323,7 +314,7 @@ router.put("/:id", adminToken, (req, res) => {
 });
 
 
-//---> D E L E T E (desactivar, no borrar)
+//---> D E L E T E (deactivate)
 router.delete("/:id", adminToken, (req, res) => {
     const id = req.params.id;
 

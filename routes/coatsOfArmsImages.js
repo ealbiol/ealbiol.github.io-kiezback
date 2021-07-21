@@ -4,7 +4,7 @@ const router = express.Router();
 
 const CoatOfArmsImage = require("../models/coatOfArmsImage");
 const verifyToken = require("../middlewares/auth")
-//http://localhost:3000/coatsofarmsimages/
+
 //---> G E T
 router.get("/", verifyToken, (req, res) => {
     CoatOfArmsImage.find({}).exec((error, coatofarmsimages) => {

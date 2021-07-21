@@ -1,7 +1,6 @@
 const express = require("express");
-// const ramda = require("ramda");
 const router = express.Router();
-const adminToken = require("../middlewares/authAdmin"); //Importamos el adminToken
+const adminToken = require("../middlewares/authAdmin");
 
 
 const NeighborhoodProperty = require("../models/neighborhoodProperty");
@@ -19,5 +18,3 @@ router.get("/", (req, res) => {
 
 module.exports = router
 
-// router.get("/", adminToken, (req, res) => {
-//Si añado adminToken no aparecen los datos renderizados. Preguntar a Daniel.

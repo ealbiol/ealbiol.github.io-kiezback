@@ -3,7 +3,6 @@ const { adminSecretKey } = require("../config/config");
 const adminToken = (req, res, next) => {
 
     let token = req.headers.authorization;
-    //token = token && token.split(" ")[1];
 
 
     jwt.verify(token, adminSecretKey, (error, playload) => {

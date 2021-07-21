@@ -1,31 +1,25 @@
-// SCHEMA DE LA COLECCIÓN users
-//Guardamos cada colección en la carpeta models. Significa la representación de una entidad en la base de datos. Ejemplo: productos, usuarios, etc
 
-//Schema de la colección 'users' que tenemos en MongoDB.
-//Otros ejemplos de esquemas: productos, coches, etc
 
-//En Schema decidimos el tipado de la colección correspondiente.
+const mongoose = require("mongoose");
 
-const mongoose = require("mongoose"); //---> Importamos mongoose.
+const uniqueValidator = require("mongoose-unique-validator");
 
-const uniqueValidator = require("mongoose-unique-validator"); //---> Importamos mongoose-unique-validator. Nos sirve para que el mensaje de error de unique sea más entendible. Nada más.
-
-let Schema = mongoose.Schema; //---> Creamos un Schema (está guardado en mongoose, es la herramienta que nos da mongoose para crear schemas)
+let Schema = mongoose.Schema;
 
 let neighborhoodSchema = new Schema({
-  //---> Creamos el Schema para la colección users.
-  //---> Dentro del Schema ponemos todas las propiedades que tendrá está entidad/colección (user).
+
+
 
   district: {
     name: {
       type: String,
-      // unique: true, //---> Si el email ya existe saltará un error informando que este email ya existe.
+
       required: [true, "Neighborhood name is required"],
-    }, //---> Si no ponemos required por defecto no lo será. El string después del true es el mensaje de error que aparecerá si el usuario no pone el username.
+    },
 
     image: {
       type: String,
-      // required: [true, "Neighborhood image is required"],
+
     },
   },
 
@@ -42,10 +36,7 @@ let neighborhoodSchema = new Schema({
 
     image: {
       type: String,
-      // required: [
-      //   true,
-      //   "Architecture Predominance image of Old Town is required",
-      // ],
+
     },
   },
 
@@ -61,11 +52,11 @@ let neighborhoodSchema = new Schema({
     },
     color: {
       type: String,
-      // required: [true, "Party Winner Color is required"],
+
     },
     image: {
       type: String,
-      // required: [true, "Party Winner Image is required"],
+
     },
   },
 
@@ -77,7 +68,7 @@ let neighborhoodSchema = new Schema({
 
     color: {
       type: String,
-      // required: [true, "Transport Zone Color is required"],
+
     },
   },
 
@@ -89,7 +80,7 @@ let neighborhoodSchema = new Schema({
 
     image: {
       type: String,
-      // required: [true, "Activity Rate Image is required"],
+
     },
   },
 
@@ -100,7 +91,7 @@ let neighborhoodSchema = new Schema({
     },
     image: {
       type: String,
-      // required: [true, "Life Cost is required"],
+
     },
   },
 
@@ -126,7 +117,7 @@ let neighborhoodSchema = new Schema({
     },
     image: {
       type: String,
-      // required: [true, "Restaurants Density Image is required"],
+
     },
   },
 
@@ -137,7 +128,7 @@ let neighborhoodSchema = new Schema({
     },
     image: {
       type: String,
-      // required: [true, "Supermarkets Density Image is required"],
+
     },
   },
 
@@ -148,7 +139,7 @@ let neighborhoodSchema = new Schema({
     },
     image: {
       type: String,
-      // required: [true, "Cinemas Image is required"],
+
     },
   },
 
@@ -159,7 +150,7 @@ let neighborhoodSchema = new Schema({
     },
     image: {
       type: String,
-      // required: [true, "Museums Image is required"],
+
     },
   },
 
@@ -170,7 +161,7 @@ let neighborhoodSchema = new Schema({
     },
     image: {
       type: String,
-      // required: [true, "Night Life Image is required"],
+
     },
   },
 
@@ -186,7 +177,7 @@ let neighborhoodSchema = new Schema({
     },
     image: {
       type: String,
-      // required: [true, "Cleanness is required"],
+
     },
   },
 
@@ -201,7 +192,7 @@ let neighborhoodSchema = new Schema({
     },
     image: {
       type: String,
-      // required: [true, "Noise Level Image is required"],
+
     },
   },
   safety: {
@@ -214,50 +205,50 @@ let neighborhoodSchema = new Schema({
   },
   busLines: {
     type: String,
-    // required: [true, "Bus Lines is required"],
+
   },
   ubahnLines: {
     name: {
       type: String,
-      // required: [true, "ubahn Lines is required"],
+
     },
     image: {
       type: String,
-      // required: [true, "ubahn Lines is required"],
+
     },
   },
   sbahnLines: {
     name: {
       type: String,
-      // required: [true, "sbahn Lines is required"],
+
     },
     image: {
       type: String,
-      // required: [true, "sbahn Lines is required"],
+
     },
   },
   bikesLanesDensity: {
     type: String,
-    // required: [true, "Bikes Lanes Density is required"],
+
   },
   parkingStreetSlots: {
     type: String,
-    // required: [true, "Parking Street Slots is required"],
+
   },
 
   lat: {
     type: Number,
-    // required: [true, "Lat is required"],
+
   },
 
   lng: {
     type: Number,
-    // required: [true, "Lng is required"],
+
   },
 
   photo: {
     type: String,
-    // required: [true, "Photo is required"],
+
   },
 
 
@@ -272,6 +263,6 @@ let neighborhoodSchema = new Schema({
 
 neighborhoodSchema.plugin(uniqueValidator, {
   message: "{PATH} should be unique",
-}); //---> Ejecutar unique validator
+});
 
-module.exports = mongoose.model("Neighborhood", neighborhoodSchema); //---> Exportamos hacia fuera el modelo que acabamos de crear.
+module.exports = mongoose.model("Neighborhood", neighborhoodSchema);

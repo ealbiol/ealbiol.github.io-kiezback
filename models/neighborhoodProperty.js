@@ -9,9 +9,9 @@ let neighborhoodPropertySchema = new Schema({
     district: {
         name: {
             type: String,
-            unique: true, //---> Si el email ya existe saltará un error informando que este email ya existe.
+            unique: true,
             required: [true, "Neighborhood name is required"],
-        }, //---> Si no ponemos required por defecto no lo será. El string después del true es el mensaje de error que aparecerá si el usuario no pone el username.
+        },
 
         image: {
             type: String,
@@ -288,4 +288,4 @@ let neighborhoodPropertySchema = new Schema({
 
 neighborhoodPropertySchema.plugin(uniqueValidator, { message: "{PATH} should be unique" })
 
-module.exports = mongoose.model("NeighborhoodProperty", neighborhoodPropertySchema); //Aquí se decide el nombre de la colección que aparecerá en MongoDB. MongoDB la pondrá en plural.
+module.exports = mongoose.model("NeighborhoodProperty", neighborhoodPropertySchema);

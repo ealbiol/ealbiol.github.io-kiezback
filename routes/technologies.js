@@ -4,7 +4,6 @@ const router = express.Router();
 
 const Technology = require("../models/technology");
 const verifyToken = require("../middlewares/auth")
-//http://localhost:3000/technologies/
 //---> G E T
 router.get("/", verifyToken, (req, res) => {
     Technology.find({}).exec((error, technologies) => {
