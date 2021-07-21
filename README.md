@@ -65,4 +65,3 @@ This project is [MIT](https://github.com/kefranabg/readme-md-generator/blob/mast
 
 :cat:
 
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
