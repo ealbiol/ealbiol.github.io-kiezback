@@ -58,7 +58,6 @@ db.once("open", () => console.log("Connected to MongoDB succesfuly"));
 
 
 
-
 app.listen(process.env.PORT, () => {
     console.log("Listening on port --->", process.env.PORT);
 })
